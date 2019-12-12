@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        popupView.frame = CGRect(x: 50, y: 15, width: view.bounds.width, height: view.bounds.height)
+        popupView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
     }
     @IBAction func btnCloseWkWebCiew(_ sender: UIButton) {
         animationOut()
