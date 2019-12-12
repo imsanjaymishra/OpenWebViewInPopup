@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OpenWebViewInPopup" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5C-ns-VGj">
+                                <rect key="frame" x="20" y="802" width="374" height="30"/>
+                                <state key="normal" title="My Online Account"/>
+                                <connections>
+                                    <action selector="openAccountActionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3u3-W9-nDe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o5C-ns-VGj" secondAttribute="bottom" constant="30" id="7ep-3b-TTk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o5C-ns-VGj" secondAttribute="trailing" constant="20" id="o4f-Yz-DIO"/>
+                            <constraint firstItem="o5C-ns-VGj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="uJ5-1e-hTh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="popupView" destination="LPE-g1-UKu" id="MFh-gm-1qe"/>
+                        <outlet property="wkWebView" destination="ObM-55-ndn" id="cDb-c5-9OC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="LPE-g1-UKu">
+                    <rect key="frame" x="0.0" y="0.0" width="405" height="588"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Online Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKV-u1-vLX">
+                            <rect key="frame" x="0.0" y="44" width="405" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="pXh-Va-AME"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObM-55-ndn">
+                            <rect key="frame" x="0.0" y="96" width="405" height="444"/>
+                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <wkWebViewConfiguration key="configuration">
+                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                <wkPreferences key="preferences"/>
+                            </wkWebViewConfiguration>
+                        </wkWebView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPC-Vj-yxW">
+                            <rect key="frame" x="0.0" y="548" width="405" height="40"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Unb-tq-O4J"/>
+                            </constraints>
+                            <state key="normal" title="Close">
+                                <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </state>
+                            <connections>
+                                <action selector="btnCloseWkWebCiew:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AFa-CY-yzW"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ObM-55-ndn" firstAttribute="top" secondItem="tKV-u1-vLX" secondAttribute="bottom" constant="8" id="4bl-Nt-02m"/>
+                        <constraint firstItem="ObM-55-ndn" firstAttribute="trailing" secondItem="dkW-EV-2Xi" secondAttribute="trailing" id="J12-ye-2cP"/>
+                        <constraint firstItem="aPC-Vj-yxW" firstAttribute="top" secondItem="ObM-55-ndn" secondAttribute="bottom" constant="8" id="J9C-bH-WFY"/>
+                        <constraint firstItem="dkW-EV-2Xi" firstAttribute="bottom" secondItem="aPC-Vj-yxW" secondAttribute="bottom" id="XTa-3o-bEs"/>
+                        <constraint firstItem="ObM-55-ndn" firstAttribute="leading" secondItem="dkW-EV-2Xi" secondAttribute="leading" id="Zxi-HJ-viB"/>
+                        <constraint firstItem="tKV-u1-vLX" firstAttribute="top" secondItem="dkW-EV-2Xi" secondAttribute="top" id="bWg-Xy-UyO"/>
+                        <constraint firstItem="aPC-Vj-yxW" firstAttribute="trailing" secondItem="dkW-EV-2Xi" secondAttribute="trailing" id="dZw-sW-UeH"/>
+                        <constraint firstItem="aPC-Vj-yxW" firstAttribute="leading" secondItem="dkW-EV-2Xi" secondAttribute="leading" id="o46-Tv-BlB"/>
+                        <constraint firstAttribute="trailing" secondItem="tKV-u1-vLX" secondAttribute="trailing" id="ooU-re-JFh"/>
+                        <constraint firstItem="tKV-u1-vLX" firstAttribute="leading" secondItem="LPE-g1-UKu" secondAttribute="leading" id="zjH-bX-9AB"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="dkW-EV-2Xi"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
+        </scene>
+    </scenes>
+</document>
