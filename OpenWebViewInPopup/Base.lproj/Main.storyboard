@@ -32,8 +32,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="containerView" destination="9tz-n0-rc4" id="R3r-w9-2Yy"/>
                         <outlet property="popupView" destination="LPE-g1-UKu" id="MFh-gm-1qe"/>
-                        <outlet property="wkWebView" destination="ObM-55-ndn" id="cDb-c5-9OC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -50,14 +50,10 @@
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObM-55-ndn">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tz-n0-rc4">
                             <rect key="frame" x="0.0" y="96" width="405" height="444"/>
-                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <wkWebViewConfiguration key="configuration">
-                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                <wkPreferences key="preferences"/>
-                            </wkWebViewConfiguration>
-                        </wkWebView>
+                            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPC-Vj-yxW">
                             <rect key="frame" x="0.0" y="548" width="405" height="40"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -74,15 +70,15 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="ObM-55-ndn" firstAttribute="top" secondItem="tKV-u1-vLX" secondAttribute="bottom" constant="8" id="4bl-Nt-02m"/>
-                        <constraint firstItem="ObM-55-ndn" firstAttribute="trailing" secondItem="dkW-EV-2Xi" secondAttribute="trailing" id="J12-ye-2cP"/>
-                        <constraint firstItem="aPC-Vj-yxW" firstAttribute="top" secondItem="ObM-55-ndn" secondAttribute="bottom" constant="8" id="J9C-bH-WFY"/>
+                        <constraint firstItem="9tz-n0-rc4" firstAttribute="leading" secondItem="dkW-EV-2Xi" secondAttribute="leading" id="MGa-wM-INu"/>
                         <constraint firstItem="dkW-EV-2Xi" firstAttribute="bottom" secondItem="aPC-Vj-yxW" secondAttribute="bottom" id="XTa-3o-bEs"/>
-                        <constraint firstItem="ObM-55-ndn" firstAttribute="leading" secondItem="dkW-EV-2Xi" secondAttribute="leading" id="Zxi-HJ-viB"/>
+                        <constraint firstItem="9tz-n0-rc4" firstAttribute="top" secondItem="tKV-u1-vLX" secondAttribute="bottom" constant="8" id="ZF5-iL-Uq2"/>
+                        <constraint firstItem="aPC-Vj-yxW" firstAttribute="top" secondItem="9tz-n0-rc4" secondAttribute="bottom" constant="8" id="b91-42-Xd3"/>
                         <constraint firstItem="tKV-u1-vLX" firstAttribute="top" secondItem="dkW-EV-2Xi" secondAttribute="top" id="bWg-Xy-UyO"/>
                         <constraint firstItem="aPC-Vj-yxW" firstAttribute="trailing" secondItem="dkW-EV-2Xi" secondAttribute="trailing" id="dZw-sW-UeH"/>
                         <constraint firstItem="aPC-Vj-yxW" firstAttribute="leading" secondItem="dkW-EV-2Xi" secondAttribute="leading" id="o46-Tv-BlB"/>
                         <constraint firstAttribute="trailing" secondItem="tKV-u1-vLX" secondAttribute="trailing" id="ooU-re-JFh"/>
+                        <constraint firstItem="dkW-EV-2Xi" firstAttribute="trailing" secondItem="9tz-n0-rc4" secondAttribute="trailing" id="zYw-TD-xpD"/>
                         <constraint firstItem="tKV-u1-vLX" firstAttribute="leading" secondItem="LPE-g1-UKu" secondAttribute="leading" id="zjH-bX-9AB"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="dkW-EV-2Xi"/>

@@ -12,12 +12,28 @@ import WebKit
 class ViewController: UIViewController {
     @IBOutlet var popupView: UIView!
     
-    @IBOutlet weak var wkWebView: WKWebView!
+    @IBOutlet weak var containerView: UIView! = nil
+    var wkWebView: WKWebView?
+    
+    
+    override func loadView() {
+        super.loadView()
+        self.wkWebView = WKWebView()
+//        self.containerView = self.wkWebView
+        wkWebView?.translatesAutoresizingMaskIntoConstraints = true
+        wkWebView?.backgroundColor = .darkGray
+        if let wkWebView = wkWebView {
+            wkWebView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+             wkWebView.frame = CGRect(origin: CGPoint.zero, size: containerView.frame.size)
+            containerView.addSubview(wkWebView)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         popupView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
     }
+    
     @IBAction func btnCloseWkWebCiew(_ sender: UIButton) {
         animationOut()
     }
@@ -48,7 +64,10 @@ class ViewController: UIViewController {
     func lodUrlInWebView() {
         let url = URL(string: "https://www.google.com/")
         let urlRequest = URLRequest(url: url!)
-        wkWebView.load(urlRequest)
+        if let webView = wkWebView {
+        webView.load(urlRequest)
+        
+        }
     }
     
 }
